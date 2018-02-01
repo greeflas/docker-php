@@ -1,6 +1,6 @@
 FROM php:5.6-fpm
 
-MAINTAINER Vladimir Kuprienko <vladimir.kuprienko@starofservice.com>
+MAINTAINER Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
 
 RUN apt-get update && \
     apt-get install -y \
