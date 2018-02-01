@@ -11,3 +11,10 @@
 [![Docker Automated build](https://img.shields.io/docker/automated/greeflas/php.svg)](https://hub.docker.com/r/greeflas/php/)
 
 PHP docker images with composer, git and nano. Based on official PHP docker images.
+
+Usage
+-----
+
+Access container
+
+`$ docker run -it --rm -v "$PWD":/var/www/html greeflas/php:7.1-fpm bash`
