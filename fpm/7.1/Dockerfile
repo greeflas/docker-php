@@ -1,15 +1,16 @@
 FROM php:7.1-fpm
 
-MAINTAINER Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+LABEL maintainer="Vladimir Kuprienko vldmr.kuprienko@gmail.com"
 
 RUN apt-get update && \
-    apt-get install -y \
-	zlib1g-dev libicu-dev \
+    apt-get install -y --no-install-recommends \
+	# Libraries
+        zlib1g-dev libicu-dev \
+
         # Install Git for installation private packages via Composer
         git \
         # Text editor for work with composer.json
         nano && \
-    apt-get clean && rm -r /var/lib/apt/lists/* && \
 
     # PHP Extensions
     docker-php-ext-install zip intl && \
@@ -18,3 +19,8 @@ RUN apt-get update && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
     # Plugin for installation of packages parallel
     composer global require hirak/prestissimo
+
+# Clean up
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*  /tmp/* /var/tmp/* && \
+    rm /var/log/lastlog /var/log/faillog

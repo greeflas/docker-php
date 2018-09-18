@@ -18,3 +18,18 @@ Usage
 Access container
 
 `$ docker run -it --rm -v "$PWD":/var/www/html greeflas/php:7.1-fpm bash`
+
+Docker-compose
+
+```yaml
+# ...
+services:
+  # PHP FPM
+  php-fpm:
+    image: greeflas/php-fpm:7.2
+    volumes:
+      - ./:/var/www/app
+    working_dir: /var/www/app
+```
+
+`$ docker-compose exec php-fpm bash`
