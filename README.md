@@ -17,7 +17,7 @@ Usage
 
 Access container
 
-`$ docker run -it --rm -v "$PWD":/var/www/html greeflas/php:7.1-fpm bash`
+`$ docker run -it --rm -v "$PWD":/var/www/html greeflas/php:7.3-fpm bash`
 
 Docker-compose
 
@@ -26,7 +26,7 @@ Docker-compose
 services:
   # PHP FPM
   php-fpm:
-    image: greeflas/php-fpm:7.2
+    image: greeflas/php-fpm:7.3
     volumes:
       - ./:/var/www/app
     working_dir: /var/www/app
