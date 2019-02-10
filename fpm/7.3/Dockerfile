@@ -5,7 +5,7 @@ LABEL maintainer="Vladimir Kuprienko vldmr.kuprienko@gmail.com"
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
 	# Libraries
-        zlib1g-dev libicu-dev \
+        zlib1g-dev libicu-dev libzip-dev \
 
         # Install Git for installation private packages via Composer
         git \
