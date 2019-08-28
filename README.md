@@ -6,6 +6,12 @@
     <br>
 </p>
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/greeflas/php.svg)](https://hub.docker.com/r/greeflas/php/)
+[![Docker Build Status](https://img.shields.io/docker/build/greeflas/php.svg)](https://hub.docker.com/r/greeflas/php/)
+[![Docker Automated build](https://img.shields.io/docker/automated/greeflas/php.svg)](https://hub.docker.com/r/greeflas/php/)
+
+PHP docker images with composer, git and nano. Based on official PHP docker images.
+
 Supported tags and respective `Dockerfile` links
 ------------------------------------------------
 
@@ -14,12 +20,6 @@ Supported tags and respective `Dockerfile` links
 * `7.1-fpm` ([fpm/7.1/Dockerfile](https://github.com/greeflas/docker-php/blob/master/fpm/7.1/Dockerfile))
 * `7.0-fpm` ([fpm/7.0/Dockerfile](https://github.com/greeflas/docker-php/blob/master/fpm/7.0/Dockerfile))
 * `5.6-fpm` ([fpm/5.6/Dockerfile](https://github.com/greeflas/docker-php/blob/master/fpm/5.6/Dockerfile))
-
-[![Docker Pulls](https://img.shields.io/docker/pulls/greeflas/php.svg)](https://hub.docker.com/r/greeflas/php/)
-[![Docker Build Status](https://img.shields.io/docker/build/greeflas/php.svg)](https://hub.docker.com/r/greeflas/php/)
-[![Docker Automated build](https://img.shields.io/docker/automated/greeflas/php.svg)](https://hub.docker.com/r/greeflas/php/)
-
-PHP docker images with composer, git and nano. Based on official PHP docker images.
 
 Usage
 -----
