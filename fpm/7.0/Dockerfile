@@ -2,6 +2,8 @@ FROM php:7.0-fpm
 
 LABEL maintainer="Volodymyr Kupriienko vldmr.kuprienko@gmail.com"
 
+ARG COMPOSER_VERSION=2.0.11
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
 	# Install libraries
@@ -17,9 +19,12 @@ RUN apt-get update && \
     docker-php-ext-install zip intl && \
 
     # Install Composer
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=${COMPOSER_VERSION} && \
+
     # Install plugin for installation of composer packages parallel
-    composer global require hirak/prestissimo && \
+    if echo ${COMPOSER_VERSION} | grep -Eq '^1'; then \
+        composer global require hirak/prestissimo \
+    ;fi && \
 
     # Clean up
     apt-get clean && \
